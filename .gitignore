@@ -1,0 +1,48 @@
+# JavaScript / Node
+node_modules/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Build artifacts
+dist/
+build/
+*.tsbuildinfo
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swc
+*.iml
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# OS artifacts (🎯 #17)
+nul
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+*.bak
+*.tmp
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Tests
+coverage/
+.nyc_output/
+*.lcov
+
+# Vite
+.vite/

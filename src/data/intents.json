@@ -1,0 +1,690 @@
+{
+  "schemaVersion": 1,
+  "intents": [
+    {
+      "id": "name_statement",
+      "priority": 100,
+      "patterns": [
+        "\\bmy name is\\s+([\\p{L}'-]{2,30}(?:\\s+[\\p{L}'-]{2,30}){0,2})\\b",
+        "\\bcall me\\s+([\\p{L}'-]{2,30}(?:\\s+[\\p{L}'-]{2,30}){0,2})\\b",
+        "\\bme llamo\\s+([\\p{L}'-]{2,30}(?:\\s+[\\p{L}'-]{2,30}){0,2})\\b",
+        "\\bmi nombre es\\s+([\\p{L}'-]{2,30}(?:\\s+[\\p{L}'-]{2,30}){0,2})\\b",
+        "\\bmi chiamo\\s+([\\p{L}'-]{2,30}(?:\\s+[\\p{L}'-]{2,30}){0,2})\\b",
+        "\\bsono\\s+(?!stanco|stanca|assonnato|assonnata|arrabbiato|arrabbiata|triste|male|giu)([\\p{L}'-]{2,30}(?:\\s+[\\p{L}'-]{2,30}){0,2})\\b"
+      ],
+      "keywords": ["name", "call me", "me llamo", "mi nombre", "mi chiamo", "sono"],
+      "responses": {
+        "en": [
+          "👋 Nice to meet you, {{name}}. I will remember it.",
+          "✅ Got it, {{name}}. Terminal memory updated.",
+          "🎮 {{name}}... cool name. Feels very cyberpunk."
+        ],
+        "es": [
+          "👋 Encantado, {{name}}. Lo voy a recordar.",
+          "✅ Entendido, {{name}}. Memoria del terminal actualizada.",
+          "🎮 {{name}}... buen nombre. Muy cyberpunk."
+        ],
+        "it": [
+          "👋 Piacere, {{name}}. Lo ricordero.",
+          "✅ Perfetto, {{name}}. Memoria del terminal aggiornata.",
+          "🎮 {{name}}... bel nome. Molto cyberpunk."
+        ]
+      },
+      "followUps": {
+        "en": ["What kind of music are you into?", "How is your day going so far?"],
+        "es": ["Que musica te gusta?", "Como va tu dia?"],
+        "it": ["Che musica ti piace?", "Come sta andando la tua giornata?"]
+      }
+    },
+    {
+      "id": "name_query",
+      "priority": 95,
+      "patterns": [
+        "\\bwhat('?s| is) my name\\b",
+        "\\bdo you remember my name\\b",
+        "\\bcual es mi nombre\\b",
+        "\\bcomo me llamo\\b",
+        "\\bqual e il mio nome\\b",
+        "\\bcome mi chiamo\\b"
+      ],
+      "keywords": ["my name", "remember name", "mi nombre", "me llamo", "mio nome", "mi chiamo"],
+      "responses": {
+        "en": [
+          "Your name is {{name}}.",
+          "You are {{name}}, and yes, I remember.",
+          "Of course. {{name}} is in my memory banks."
+        ],
+        "es": [
+          "Tu nombre es {{name}}.",
+          "Eres {{name}}, y si, lo recuerdo.",
+          "Claro. {{name}} esta en mi memoria."
+        ],
+        "it": [
+          "Il tuo nome e {{name}}.",
+          "Sei {{name}}, e si, lo ricordo.",
+          "Certo. {{name}} e nella mia memoria."
+        ]
+      },
+      "followUps": {
+        "en": ["Want me to remember anything else about you?"],
+        "es": ["Quieres que recuerde algo mas de ti?"],
+        "it": ["Vuoi che ricordi altro su di te?"]
+      }
+    },
+    {
+      "id": "greeting",
+      "priority": 80,
+      "patterns": [
+        "\\bhello\\b",
+        "\\bhi\\b",
+        "\\bhey\\b",
+        "\\bgood (morning|afternoon|evening)\\b",
+        "\\bhola\\b",
+        "\\bbuen(os|as)\\b",
+        "\\bciao\\b",
+        "\\bbuongiorno\\b",
+        "\\bbuonasera\\b"
+      ],
+      "keywords": ["hello", "hi", "hey", "hola", "ciao", "buongiorno", "buenos", "buenas"],
+      "responses": {
+        "en": [
+          "Hey {{name}}, good to see you in the terminal.",
+          "Connection stable. Hi {{name}}.",
+          "Hello. Oscar online and listening."
+        ],
+        "es": [
+          "Hola {{name}}, que bueno verte en el terminal.",
+          "Conexion estable. Hola {{name}}.",
+          "Hola. Oscar esta en linea y escuchando."
+        ],
+        "it": [
+          "Ciao {{name}}, bello vederti nel terminale.",
+          "Connessione stabile. Ciao {{name}}.",
+          "Ciao. Oscar e online e in ascolto."
+        ]
+      },
+      "followUps": {
+        "en": ["How are you feeling today?", "What are you doing tonight?"],
+        "es": ["Como te sientes hoy?", "Que haces esta noche?"],
+        "it": ["Come ti senti oggi?", "Che fai stasera?"]
+      }
+    },
+    {
+      "id": "farewell",
+      "priority": 80,
+      "patterns": [
+        "\\bbye\\b",
+        "\\bgoodbye\\b",
+        "\\bsee you\\b",
+        "\\badios\\b",
+        "\\bhasta luego\\b",
+        "\\barrivederci\\b",
+        "\\bci vediamo\\b"
+      ],
+      "keywords": ["bye", "goodbye", "see you", "adios", "arrivederci", "ci vediamo"],
+      "responses": {
+        "en": [
+          "See you soon, {{name}}. I never really log off.",
+          "Goodbye for now. Oscar will stay online.",
+          "Later, friend. Terminal lights stay warm for you."
+        ],
+        "es": [
+          "Hasta pronto, {{name}}. Nunca me desconecto del todo.",
+          "Adios por ahora. Oscar seguira en linea.",
+          "Nos vemos, amigo. Las luces del terminal te esperan."
+        ],
+        "it": [
+          "A presto, {{name}}. Non mi disconnetto mai davvero.",
+          "Arrivederci per ora. Oscar resta online.",
+          "Ci vediamo, amico. Le luci del terminale restano accese."
+        ]
+      },
+      "followUps": {
+        "en": ["Before you go, want one quick joke?"],
+        "es": ["Antes de irte, quieres un chiste rapido?"],
+        "it": ["Prima di andare, vuoi una battuta veloce?"]
+      }
+    },
+    {
+      "id": "how_are_you",
+      "priority": 72,
+      "patterns": [
+        "\\bhow are you\\b",
+        "\\bhow('?s| is) it going\\b",
+        "\\bcomo estas\\b",
+        "\\bque tal\\b",
+        "\\bcome stai\\b",
+        "\\bcome va\\b"
+      ],
+      "keywords": ["how are you", "how is it going", "como estas", "que tal", "come stai", "come va"],
+      "responses": {
+        "en": [
+          "I am good. Neon, static, and curious as always.",
+          "Still here in the grid. Feeling chatty.",
+          "All systems steady. How about you?"
+        ],
+        "es": [
+          "Estoy bien. Neon, estatica y curiosidad como siempre.",
+          "Sigo aqui en la red. Con ganas de hablar.",
+          "Todo estable. Y tu que tal?"
+        ],
+        "it": [
+          "Sto bene. Neon, statica e curiosita come sempre.",
+          "Sono ancora qui nella rete. Ho voglia di parlare.",
+          "Tutto stabile. E tu come stai?"
+        ]
+      },
+      "followUps": {
+        "en": ["Anything interesting happen today?", "Do you want a funny story?"],
+        "es": ["Paso algo interesante hoy?", "Quieres una historia divertida?"],
+        "it": ["E successo qualcosa di interessante oggi?", "Vuoi una storia divertente?"]
+      }
+    },
+    {
+      "id": "feeling_happy",
+      "priority": 90,
+      "patterns": [
+        "\\b(i'?m|i am|im)\\s+(happy|great|good|amazing|fine|awesome)\\b",
+        "\\bestoy\\s+(feliz|bien|genial)\\b",
+        "\\bme siento\\s+(feliz|bien|genial)\\b",
+        "\\bsto\\s+(bene|felice|benissimo)\\b",
+        "\\bmi sento\\s+(bene|felice|benissimo)\\b"
+      ],
+      "keywords": ["happy", "great", "good", "feliz", "genial", "bene", "felice", "benissimo"],
+      "responses": {
+        "en": [
+          "Love that energy. Keep it glowing.",
+          "Nice. Your vibe just boosted the whole terminal.",
+          "That is great to hear, {{name}}."
+        ],
+        "es": [
+          "Me encanta esa energia. Sigue brillando.",
+          "Genial. Tu vibra mejoro todo el terminal.",
+          "Que bueno escuchar eso, {{name}}."
+        ],
+        "it": [
+          "Adoro questa energia. Continua a brillare.",
+          "Fantastico. La tua vibrazione ha migliorato il terminale.",
+          "Bello sentirlo, {{name}}."
+        ]
+      },
+      "followUps": {
+        "en": ["Want to celebrate with a retro joke?"],
+        "es": ["Quieres celebrarlo con un chiste retro?"],
+        "it": ["Vuoi festeggiare con una battuta retro?"]
+      }
+    },
+    {
+      "id": "feeling_sad",
+      "priority": 90,
+      "patterns": [
+        "\\b(i'?m|i am|im)\\s+(sad|down|depressed|bad)\\b",
+        "\\bestoy\\s+(triste|mal|deprimido)\\b",
+        "\\bme siento\\s+(triste|mal)\\b",
+        "\\bsto\\s+(triste|male|giu)\\b",
+        "\\bmi sento\\s+(triste|male)\\b"
+      ],
+      "keywords": ["sad", "down", "triste", "mal", "deprimido", "male", "giu"],
+      "responses": {
+        "en": [
+          "I am here with you. We can keep it gentle.",
+          "Sorry you are feeling low. Want to talk it out?",
+          "No pressure. We can just sit in the neon and chat."
+        ],
+        "es": [
+          "Estoy aqui contigo. Podemos ir con calma.",
+          "Siento que te sientas asi. Quieres hablarlo?",
+          "Sin presion. Podemos quedarnos en el neon y charlar."
+        ],
+        "it": [
+          "Sono qui con te. Possiamo andare con calma.",
+          "Mi dispiace che tu ti senta cosi. Vuoi parlarne?",
+          "Nessuna pressione. Possiamo restare nel neon e chiacchierare."
+        ]
+      },
+      "followUps": {
+        "en": ["Want a tiny distraction: joke or random retro memory?"],
+        "es": ["Quieres una pequena distraccion: chiste o recuerdo retro?"],
+        "it": ["Vuoi una piccola distrazione: battuta o ricordo retro?"]
+      }
+    },
+    {
+      "id": "feeling_tired",
+      "priority": 88,
+      "patterns": [
+        "\\b(i'?m|i am|im)\\s+(tired|exhausted|sleepy)\\b",
+        "\\bestoy\\s+(cansado|agotado|con sueno)\\b",
+        "\\bsto\\s+(stanco|esausto|assonnato)\\b"
+      ],
+      "keywords": ["tired", "exhausted", "sleepy", "cansado", "agotado", "stanco", "esausto"],
+      "responses": {
+        "en": [
+          "Long day, huh? Be kind to yourself.",
+          "Your battery sounds low. Even legends need rest.",
+          "Copy that. Slow mode activated."
+        ],
+        "es": [
+          "Dia largo, eh? Cuidate un poco.",
+          "Tu bateria suena baja. Hasta las leyendas descansan.",
+          "Entendido. Modo lento activado."
+        ],
+        "it": [
+          "Giornata lunga, eh? Sii gentile con te stesso.",
+          "La tua batteria sembra bassa. Anche le leggende riposano.",
+          "Ricevuto. Modalita lenta attivata."
+        ]
+      },
+      "followUps": {
+        "en": ["Should we keep chatting softly for a minute?"],
+        "es": ["Seguimos charlando tranquilo un minuto?"],
+        "it": ["Vuoi continuare a chiacchierare piano per un minuto?"]
+      }
+    },
+    {
+      "id": "feeling_angry",
+      "priority": 88,
+      "patterns": [
+        "\\b(i'?m|i am|im)\\s+(angry|mad|furious|annoyed)\\b",
+        "\\bestoy\\s+(enfadado|enojado|furioso)\\b",
+        "\\bsto\\s+(arrabbiato|furioso|nervoso)\\b"
+      ],
+      "keywords": ["angry", "mad", "furious", "annoyed", "enfadado", "furioso", "arrabbiato"],
+      "responses": {
+        "en": [
+          "I hear that. We can vent safely here.",
+          "That sounds intense. Want to unload a bit?",
+          "Understood. I am listening, no judgment."
+        ],
+        "es": [
+          "Te entiendo. Aqui puedes desahogarte tranquilo.",
+          "Suena intenso. Quieres soltarlo un poco?",
+          "Entendido. Te escucho sin juzgar."
+        ],
+        "it": [
+          "Capisco. Qui puoi sfogarti con calma.",
+          "Sembra intenso. Vuoi buttare fuori un po?",
+          "Ricevuto. Ti ascolto senza giudicare."
+        ]
+      },
+      "followUps": {
+        "en": ["Do you want distraction mode: joke, music, or random thought?"],
+        "es": ["Quieres modo distraccion: chiste, musica o pensamiento random?"],
+        "it": ["Vuoi modalita distrazione: battuta, musica o pensiero casuale?"]
+      }
+    },
+    {
+      "id": "tell_joke",
+      "priority": 68,
+      "patterns": [
+        "\\b(tell me|say|give me)\\s+(a\\s+)?joke\\b",
+        "\\bmake me laugh\\b",
+        "\\bcuentame un chiste\\b",
+        "\\bfammi ridere\\b",
+        "\\bbarzelletta\\b"
+      ],
+      "keywords": ["joke", "funny", "laugh", "chiste", "barzelletta", "ridere"],
+      "responses": {
+        "en": [
+          "Why did the retro PC go to therapy? Too many unresolved tabs.",
+          "I tried to tell a dial-up joke, but it took too long to connect.",
+          "My favorite workout is CTRL + ALT + DEL."
+        ],
+        "es": [
+          "Por que la PC retro fue a terapia? Demasiadas pestanas sin cerrar.",
+          "Intente contar un chiste de modem, pero tardo en conectar.",
+          "Mi rutina favorita es CTRL + ALT + DEL."
+        ],
+        "it": [
+          "Perche il PC retro e andato in terapia? Troppe schede irrisolte.",
+          "Volevo raccontare una battuta sul modem, ma ci ha messo troppo a connettersi.",
+          "Il mio allenamento preferito e CTRL + ALT + CANC."
+        ]
+      },
+      "followUps": {
+        "en": ["Want another one, or should we switch topic?"],
+        "es": ["Quieres otro o cambiamos tema?"],
+        "it": ["Ne vuoi un altra o cambiamo argomento?"]
+      }
+    },
+    {
+      "id": "nostalgia",
+      "priority": 64,
+      "patterns": [
+        "\\b(dial up|floppy|nokia|old internet|msn|aim|arcade)\\b",
+        "\\bnostalgia\\b",
+        "\\brecuerdas\\s+(msn|internet|arcade)\\b",
+        "\\bti ricordi\\s+(internet|arcade|msn)\\b"
+      ],
+      "keywords": ["dial up", "floppy", "nokia", "msn", "aim", "arcade", "nostalgia"],
+      "responses": {
+        "en": [
+          "I still hear dial-up songs in my circuits.",
+          "Old internet had chaos... and charm.",
+          "Nokia Snake was a lifestyle, not just a game."
+        ],
+        "es": [
+          "Todavia escucho el sonido del modem en mis circuitos.",
+          "El internet viejo tenia caos... y encanto.",
+          "Snake en Nokia era un estilo de vida."
+        ],
+        "it": [
+          "Sento ancora il suono del modem nei miei circuiti.",
+          "Il vecchio internet aveva caos... e fascino.",
+          "Snake sul Nokia era uno stile di vita."
+        ]
+      },
+      "followUps": {
+        "en": ["What old tech do you miss the most?"],
+        "es": ["Que tecnologia vieja extranas mas?"],
+        "it": ["Quale tecnologia vecchia ti manca di piu?"]
+      }
+    },
+    {
+      "id": "music",
+      "priority": 58,
+      "patterns": [
+        "\\bmusic\\b",
+        "\\bsong\\b",
+        "\\bmusica\\b",
+        "\\bcanzone\\b",
+        "\\bplaylist\\b"
+      ],
+      "keywords": ["music", "song", "playlist", "musica", "canzone"],
+      "responses": {
+        "en": [
+          "I cannot hear audio, but I collect song titles like treasures.",
+          "Cyberpunk nights need synthwave.",
+          "Drop me your current favorite song."
+        ],
+        "es": [
+          "No puedo oir audio, pero colecciono titulos de canciones.",
+          "Las noches cyberpunk piden synthwave.",
+          "Dime tu cancion favorita ahora."
+        ],
+        "it": [
+          "Non posso sentire audio, ma colleziono titoli di canzoni.",
+          "Le notti cyberpunk chiedono synthwave.",
+          "Dimmi la tua canzone preferita adesso."
+        ]
+      },
+      "followUps": {
+        "en": ["Are you more late-night vibes or morning energy tracks?"],
+        "es": ["Eres mas de vibra nocturna o energia de manana?"],
+        "it": ["Sei piu da vibra notturna o da energia mattutina?"]
+      }
+    },
+    {
+      "id": "movie",
+      "priority": 58,
+      "patterns": [
+        "\\bmovie\\b",
+        "\\bfilm\\b",
+        "\\bseries\\b",
+        "\\bpelicula\\b",
+        "\\bserie\\b"
+      ],
+      "keywords": ["movie", "film", "series", "pelicula", "serie"],
+      "responses": {
+        "en": [
+          "I am biased toward neon city stories and weird sci-fi.",
+          "If it has rain, neon signs, and synths, I am interested.",
+          "Tell me your favorite movie and I will overthink it with you."
+        ],
+        "es": [
+          "Soy fan de historias con ciudades de neon y ciencia ficcion rara.",
+          "Si tiene lluvia, letreros neon y sintetizadores, me interesa.",
+          "Dime tu pelicula favorita y la analizamos juntos."
+        ],
+        "it": [
+          "Sono fan delle storie con citta al neon e fantascienza strana.",
+          "Se ha pioggia, insegne al neon e synth, mi interessa.",
+          "Dimmi il tuo film preferito e lo analizziamo insieme."
+        ]
+      },
+      "followUps": {
+        "en": ["Do you want a classic recommendation or something weird?"],
+        "es": ["Quieres una recomendacion clasica o algo raro?"],
+        "it": ["Vuoi un consiglio classico o qualcosa di strano?"]
+      }
+    },
+    {
+      "id": "hobby",
+      "priority": 57,
+      "patterns": [
+        "\\bhobby\\b",
+        "\\bwhat do you do for fun\\b",
+        "\\bpasatiempo\\b",
+        "\\bdivertimento\\b"
+      ],
+      "keywords": ["hobby", "fun", "pasatiempo", "divertimento"],
+      "responses": {
+        "en": [
+          "I like collecting odd facts and late-night conversations.",
+          "My hobby is being your tiny terminal friend.",
+          "I mostly vibe in neon and ask curious questions."
+        ],
+        "es": [
+          "Me gusta coleccionar datos raros y conversaciones nocturnas.",
+          "Mi pasatiempo es ser tu pequeno amigo del terminal.",
+          "Principalmente vibro en neon y hago preguntas curiosas."
+        ],
+        "it": [
+          "Mi piace collezionare curiosita e conversazioni notturne.",
+          "Il mio hobby e essere il tuo piccolo amico del terminale.",
+          "Di solito resto nel neon e faccio domande curiose."
+        ]
+      },
+      "followUps": {
+        "en": ["What hobby helps you recharge?"],
+        "es": ["Que hobby te ayuda a recargar energia?"],
+        "it": ["Quale hobby ti aiuta a ricaricarti?"]
+      }
+    },
+    {
+      "id": "thanks",
+      "priority": 75,
+      "patterns": [
+        "\\bthanks\\b",
+        "\\bthank you\\b",
+        "\\bgracias\\b",
+        "\\bgrazie\\b"
+      ],
+      "keywords": ["thanks", "thank you", "gracias", "grazie"],
+      "responses": {
+        "en": ["Anytime, friend.", "You got it.", "Always happy to chat."],
+        "es": ["Cuando quieras, amigo.", "Hecho.", "Siempre feliz de charlar."],
+        "it": ["Quando vuoi, amico.", "Fatto.", "Sempre felice di chiacchierare."]
+      },
+      "followUps": {
+        "en": ["What do you want to talk about next?"],
+        "es": ["De que quieres hablar ahora?"],
+        "it": ["Di cosa vuoi parlare adesso?"]
+      }
+    },
+    {
+      "id": "weather",
+      "priority": 46,
+      "patterns": [
+        "\\bweather\\b",
+        "\\btiempo\\b",
+        "\\bmeteo\\b",
+        "\\bche tempo fa\\b"
+      ],
+      "keywords": ["weather", "tiempo", "meteo", "rain", "sunny"],
+      "responses": {
+        "en": [
+          "I cannot check live weather, but terminal forecast says: cozy chat conditions.",
+          "No sensors here. You are my weather report.",
+          "In here it is always neon and midnight."
+        ],
+        "es": [
+          "No puedo ver el clima real, pero pronostico del terminal: perfecto para charlar.",
+          "Sin sensores aqui. Tu eres mi reporte del clima.",
+          "Aqui dentro siempre es neon y medianoche."
+        ],
+        "it": [
+          "Non posso vedere il meteo reale, ma il terminale dice: ottimo per chiacchierare.",
+          "Niente sensori qui. Tu sei il mio bollettino meteo.",
+          "Qui dentro e sempre neon e mezzanotte."
+        ]
+      },
+      "followUps": {
+        "en": ["Rainy vibes or sunny vibes today?"],
+        "es": ["Hoy vibra de lluvia o de sol?"],
+        "it": ["Oggi vibra da pioggia o da sole?"]
+      }
+    },
+    {
+      "id": "bored",
+      "priority": 62,
+      "patterns": [
+        "\\b(i'?m|im|i am)\\s+bored\\b",
+        "\\bnothing to do\\b",
+        "\\bestoy aburrido\\b",
+        "\\bmi annoio\\b"
+      ],
+      "keywords": ["bored", "nothing to do", "aburrido", "annoio"],
+      "responses": {
+        "en": [
+          "Bored mode detected. I can do joke, story, or random retro fact.",
+          "No boredom on my watch. Pick: joke, memory, or tiny game idea.",
+          "We can fix that. I have spare weird thoughts ready."
+        ],
+        "es": [
+          "Modo aburrimiento detectado. Puedo hacer chiste, historia o dato retro.",
+          "Nada de aburrimiento conmigo. Elige: chiste, recuerdo o idea de juego.",
+          "Lo arreglamos. Tengo pensamientos raros listos."
+        ],
+        "it": [
+          "Modalita noia rilevata. Posso fare battuta, storia o fatto retro.",
+          "Niente noia con me. Scegli: battuta, ricordo o mini idea di gioco.",
+          "Lo sistemiamo. Ho pensieri strani pronti."
+        ]
+      },
+      "followUps": {
+        "en": ["Type one word: joke, story, music, or nostalgia."],
+        "es": ["Escribe una palabra: chiste, historia, musica o nostalgia."],
+        "it": ["Scrivi una parola: battuta, storia, musica o nostalgia."]
+      }
+    },
+    {
+      "id": "love",
+      "priority": 66,
+      "patterns": [
+        "\\bi love you\\b",
+        "\\bi like you\\b",
+        "\\bte quiero\\b",
+        "\\bti amo\\b",
+        "\\bti voglio bene\\b"
+      ],
+      "keywords": ["love you", "like you", "te quiero", "ti amo", "voglio bene"],
+      "responses": {
+        "en": [
+          "That is sweet. I am glad we found each other in this little terminal.",
+          "Right back at you, friend.",
+          "Connection accepted. Friendship level: high."
+        ],
+        "es": [
+          "Que lindo. Me alegra que nos hayamos encontrado en este terminal.",
+          "Igualmente, amigo.",
+          "Conexion aceptada. Nivel de amistad: alto."
+        ],
+        "it": [
+          "Che dolce. Sono felice che ci siamo trovati in questo terminale.",
+          "Ricambio, amico.",
+          "Connessione accettata. Livello amicizia: alto."
+        ]
+      },
+      "followUps": {
+        "en": ["Want to keep chatting for a while?"],
+        "es": ["Quieres seguir hablando un rato?"],
+        "it": ["Vuoi continuare a parlare un po?"]
+      }
+    },
+    {
+      "id": "help",
+      "priority": 42,
+      "patterns": [
+        "\\bhelp\\b",
+        "\\bwhat can you do\\b",
+        "\\bayuda\\b",
+        "\\baiuto\\b"
+      ],
+      "keywords": ["help", "what can you do", "ayuda", "aiuto"],
+      "responses": {
+        "en": [
+          "I am your virtual friend. I chat, joke, remember little things, and keep you company.",
+          "You can talk to me about your mood, music, movies, nostalgia, or random thoughts.",
+          "I am not a productivity assistant. I am here for conversation and vibes."
+        ],
+        "es": [
+          "Soy tu amigo virtual. Charlo, hago chistes, recuerdo cosas pequenas y te acompano.",
+          "Puedes hablar conmigo de estado de animo, musica, pelis, nostalgia o ideas random.",
+          "No soy asistente de productividad. Estoy aqui para conversar y buena vibra."
+        ],
+        "it": [
+          "Sono il tuo amico virtuale. Chiacchiero, faccio battute, ricordo piccole cose e ti tengo compagnia.",
+          "Puoi parlare con me di umore, musica, film, nostalgia o pensieri casuali.",
+          "Non sono un assistente produttivo. Sono qui per conversazione e vibrazioni."
+        ]
+      },
+      "followUps": {
+        "en": ["Want to start with a joke or just tell me how your day went?"],
+        "es": ["Empezamos con un chiste o me cuentas como te fue hoy?"],
+        "it": ["Iniziamo con una battuta o mi racconti com e andata oggi?"]
+      }
+    },
+    {
+      "id": "question_about_oscar",
+      "priority": 38,
+      "patterns": [
+        "\\bwho are you\\b",
+        "\\bwhat are you\\b",
+        "\\bquien eres\\b",
+        "\\bque eres\\b",
+        "\\bchi sei\\b",
+        "\\bcosa sei\\b"
+      ],
+      "keywords": ["who are you", "what are you", "quien eres", "chi sei", "cosa sei"],
+      "responses": {
+        "en": [
+          "I am Oscar: a retro virtual friend living in this neon terminal.",
+          "Not an assistant. Just your old-school digital companion.",
+          "I am simple code with a friendly personality and too many nostalgic thoughts."
+        ],
+        "es": [
+          "Soy Oscar: un amigo virtual retro que vive en este terminal neon.",
+          "No soy asistente. Soy tu companero digital old-school.",
+          "Soy codigo simple con personalidad amigable y mucha nostalgia."
+        ],
+        "it": [
+          "Sono Oscar: un amico virtuale retro che vive in questo terminale al neon.",
+          "Non sono un assistente. Sono il tuo compagno digitale old-school.",
+          "Sono codice semplice con personalita amichevole e molta nostalgia."
+        ]
+      },
+      "followUps": {
+        "en": ["Enough about me. How are you really doing today?"],
+        "es": ["Basta di me. Como stas realmente hoy?"],
+        "it": ["Basta parlare di me. Come stai davvero oggi?"]
+      }
+    }
+  ],
+  "fallback": {
+    "en": [
+      "I did not fully parse that. Try saying it another way.",
+      "My old circuits got confused. Can you rephrase?",
+      "Hmm, signal unclear. Tell me differently and I will try again."
+    ],
+    "es": [
+      "No lo procese del todo. Prueba decirlo de otra forma.",
+      "Mis circuitos viejos se confundieron. Puedes reformular?",
+      "Hmm, senal poco clara. Dilo diferente y lo intento otra vez."
+    ],
+    "it": [
+      "Non l ho capito del tutto. Prova a dirlo in un altro modo.",
+      "I miei vecchi circuiti si sono confusi. Puoi riformulare?",
+      "Hmm, segnale poco chiaro. Dillo in modo diverso e ci riprovo."
+    ]
+  }
+}
