@@ -1,4 +1,4 @@
-# 🤖 Oscar v2.0 - Retro Cyberpunk Virtual Friend
+# 🤖 Oscar - Retro Cyberpunk Virtual Friend
 
 > A fully-featured, personality-driven chatbot with **mood awareness**, **12 unique random events**, **neon aesthetics**, and **comprehensive improvements**. 100% browser-based, fully offline-capable.
 
