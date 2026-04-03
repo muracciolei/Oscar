@@ -1,4 +1,5 @@
-import { LanguageCode, LanguageOption } from '../language/LanguageManager';
+import { LanguageCode } from '../language/LanguageManager';
+import type { LanguageOption } from '../types';
 import { TypingIndicator } from './TypingIndicator';
 import { MAX_INPUT_LENGTH } from '../config';
 

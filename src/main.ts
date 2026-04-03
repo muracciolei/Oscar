@@ -15,7 +15,7 @@ import { RandomEvents } from './personality/RandomEvents';
 import { IntentMatcher, MatchResult } from './engine/IntentMatcher';
 import { ResponseGenerator } from './engine/ResponseGenerator';
 
-class OscarApp {
+export class OscarApp {
   private readonly memory: MemoryManager;
   private readonly language: LanguageManager;
   private readonly mood: MoodEngine;

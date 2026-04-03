@@ -5,7 +5,6 @@ export { OscarApp } from './main';
 
 // Memory & Storage
 export { MemoryManager } from './memory/MemoryManager';
-export type { MemoryState, MemoryMessage } from './types';
 
 // Language & Localization
 export { LanguageManager } from './language/LanguageManager';

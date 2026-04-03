@@ -97,7 +97,7 @@ describe('RandomEvents', () => {
 
       // Try multiple times due to randomness
       let found = false;
-      for (let i = 0; i < 10; i '') {
+      for (let i = 0; i < 10; i++) {
         const event = events.maybeGetEvent('es', 'neutral');
         if (event) {
           // Just verify it returns something
